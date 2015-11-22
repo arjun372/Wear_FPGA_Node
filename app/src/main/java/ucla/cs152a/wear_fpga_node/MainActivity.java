@@ -66,7 +66,7 @@ public class MainActivity extends Activity implements SensorEventListener{
         try {
             serialSocket = FPGA.createRfcommSocketToServiceRecord(UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"));
             BT_STATUS = 0;
-            Log.d("s",""+BT_STATUS);
+            Log.d("Bluetooth Status",""+BT_STATUS);
         }
         catch (IOException e) {
             serialSocket = null;
