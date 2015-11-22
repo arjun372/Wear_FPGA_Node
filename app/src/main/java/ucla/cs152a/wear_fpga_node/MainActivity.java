@@ -42,7 +42,7 @@ public class MainActivity extends Activity implements SensorEventListener{
     private static final int SAMPLE_RATE = 10;
     private static float[] gyroData = new float[3];
     private static PowerManager.WakeLock mWakeLock = null;
-
+    private static final String TAG = "Bluetooth Status";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +66,7 @@ public class MainActivity extends Activity implements SensorEventListener{
         try {
             serialSocket = FPGA.createRfcommSocketToServiceRecord(UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"));
             BT_STATUS = 0;
-            Log.d("Bluetooth Status",""+BT_STATUS);
+            Log.d(TAG,""+BT_STATUS);
         }
         catch (IOException e) {
             serialSocket = null;
@@ -82,7 +82,7 @@ public class MainActivity extends Activity implements SensorEventListener{
                 SystemClock.sleep(500);
                 BT_STATUS = 0;
             }
-            Log.d("s",""+BT_STATUS);
+            Log.d(TAG,""+BT_STATUS);
         }
 
         //if connected, try to open a stream, retry every 0.5 not yet opened
@@ -97,7 +97,7 @@ public class MainActivity extends Activity implements SensorEventListener{
                 outputStream = null;
                 inputStream = null;
             }
-            Log.d("s",""+BT_STATUS);
+            Log.d(TAG,""+BT_STATUS);
         }
 
         if(BT_STATUS == 2)
@@ -128,7 +128,7 @@ public class MainActivity extends Activity implements SensorEventListener{
             } catch (IOException e) {
                 BT_STATUS =1 ;
             }
-            Log.d("s",""+BT_STATUS);
+            Log.d(TAG,""+BT_STATUS);
         }
 
         if (mWakeLock != null) {
