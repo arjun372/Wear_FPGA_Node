@@ -51,44 +51,6 @@ public class MainActivity extends Activity implements SensorEventListener{
         mContainerView = (BoxInsetLayout) findViewById(R.id.container);
         mTextView = (TextView) findViewById(R.id.text);
         mClockView = (TextView) findViewById(R.id.clock);
-    }
-
-    @Override
-    public void onPause(){
-        super.onPause();
-
-        if(BT_STATUS == 2)
-            setSensors(false);
-
-        try {
-            outputStream.close();
-            inputStream.close();
-        } catch (IOException e) {
-           //
-        }
-
-        while(serialSocket.isConnected())
-        {
-            try {
-                serialSocket.close();
-                BT_STATUS = 0;
-                outputStream = null;
-                inputStream = null;
-            } catch (IOException e) {
-                BT_STATUS =1 ;
-            }
-            Log.d("s",""+BT_STATUS);
-        }
-
-        if (mWakeLock != null) {
-            mWakeLock.release();
-            mWakeLock = null;
-        }
-    }
-
-    @Override
-    public void onResume(){
-        super.onResume();
 
         if(mWakeLock == null) {
             final PowerManager mgr = (PowerManager) getSystemService(Context.POWER_SERVICE);
@@ -97,8 +59,8 @@ public class MainActivity extends Activity implements SensorEventListener{
         }
 
         // Pair with FPGA if not paired already and open socket;
-        BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
-        BluetoothAdapter mBluetoothAdapter = bluetoothManager.getAdapter();
+        // BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         BluetoothDevice FPGA = mBluetoothAdapter.getRemoteDevice(FPGA_MAC);
 
         try {
@@ -140,6 +102,45 @@ public class MainActivity extends Activity implements SensorEventListener{
 
         if(BT_STATUS == 2)
             setSensors(true);
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+
+        if(BT_STATUS == 2)
+            setSensors(false);
+
+        try {
+            outputStream.close();
+            inputStream.close();
+        } catch (IOException e) {
+           //
+        }
+
+        while(serialSocket.isConnected())
+        {
+            try {
+                serialSocket.close();
+                BT_STATUS = 0;
+                outputStream = null;
+                inputStream = null;
+            } catch (IOException e) {
+                BT_STATUS =1 ;
+            }
+            Log.d("s",""+BT_STATUS);
+        }
+
+        if (mWakeLock != null) {
+            mWakeLock.release();
+            mWakeLock = null;
+        }
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
     }
 
 
@@ -194,5 +195,14 @@ public class MainActivity extends Activity implements SensorEventListener{
        // mSensorManager.registerListener(this, mAccelerometer, (1000000 / SAMPLE_RATE));
         //mSensorManager.registerListener(this, mGyroscope, (1000000 / SAMPLE_RATE));
         mSensorManager.registerListener(this, mRotation, (1000000 / SAMPLE_RATE));
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if (mWakeLock != null) {
+            mWakeLock.release();
+            mWakeLock = null;
+        }
     }
 }
