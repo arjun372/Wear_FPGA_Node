@@ -11,6 +11,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.os.SystemClock;
 import android.support.wearable.activity.WearableActivity;
 import android.support.wearable.view.BoxInsetLayout;
@@ -40,6 +41,8 @@ public class MainActivity extends Activity implements SensorEventListener{
     private static SensorManager mSensorManager = null;
     private static final int SAMPLE_RATE = 10;
     private static float[] gyroData = new float[3];
+    private static PowerManager.WakeLock mWakeLock = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,11 +79,23 @@ public class MainActivity extends Activity implements SensorEventListener{
             }
             Log.d("s",""+BT_STATUS);
         }
+
+        if (mWakeLock != null) {
+            mWakeLock.release();
+            mWakeLock = null;
+        }
     }
 
     @Override
     public void onResume(){
-        super.onResume();final
+        super.onResume();
+
+        if(mWakeLock == null) {
+            final PowerManager mgr = (PowerManager) getSystemService(Context.POWER_SERVICE);
+            mWakeLock = mgr.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "SHIT");
+            mWakeLock.acquire();
+        }
+
         // Pair with FPGA if not paired already and open socket;
         BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         BluetoothAdapter mBluetoothAdapter = bluetoothManager.getAdapter();
