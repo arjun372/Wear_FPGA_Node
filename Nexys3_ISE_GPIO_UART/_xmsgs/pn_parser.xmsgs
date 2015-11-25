@@ -8,13 +8,13 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/arjun/Classes/CS_M152A/Nexys3_ISE_GPIO_UART/GPIO_demo.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/arjun/Classes/CS_M152A/Wear_FPGA_Node/Nexys3_ISE_GPIO_UART/GPIO_demo.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/arjun/Classes/CS_M152A/Nexys3_ISE_GPIO_UART/UART_TX_CTRL.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/arjun/Classes/CS_M152A/Wear_FPGA_Node/Nexys3_ISE_GPIO_UART/UART_TX_CTRL.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/arjun/Classes/CS_M152A/Nexys3_ISE_GPIO_UART/btn_debounce.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/arjun/Classes/CS_M152A/Wear_FPGA_Node/Nexys3_ISE_GPIO_UART/btn_debounce.vhd&quot; into library work</arg>
 </msg>
 
 </messages>

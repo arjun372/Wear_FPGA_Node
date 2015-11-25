@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-11-25T13:30:09</DateModified>
+  <DateModified>2015-11-25T15:29:39</DateModified>
   <ModuleName>GPIO_demo</ModuleName>
   <SummaryTimeStamp>2011-08-10T18:45:03</SummaryTimeStamp>
-  <SavedFilePath>/home/arjun/Classes/CS_M152A/Nexys3_ISE_GPIO_UART/iseconfig/GPIO_demo.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/arjun/Classes/CS_M152A/Nexys3_ISE_GPIO_UART/</ImplementationReportsDirectory>
+  <SavedFilePath>/home/arjun/Classes/CS_M152A/Wear_FPGA_Node/Nexys3_ISE_GPIO_UART/iseconfig/GPIO_demo.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/arjun/Classes/CS_M152A/Wear_FPGA_Node/Nexys3_ISE_GPIO_UART/</ImplementationReportsDirectory>
   <DateInitialized>2011-08-10T18:44:06</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
