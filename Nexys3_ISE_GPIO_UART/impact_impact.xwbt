@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/arjun/Classes/CS_M152A/Nexys3_ISE_GPIO_UART/impact.xsl
+OUTFILE=/home/arjun/Classes/CS_M152A/Nexys3_ISE_GPIO_UART/impact.xsl
+FAMILY=None
+PART=None
+WORKINGDIR=/home/arjun/Classes/CS_M152A/Nexys3_ISE_GPIO_UART
+LICENSE=iMPACT
+USER_INFO=iMPACT

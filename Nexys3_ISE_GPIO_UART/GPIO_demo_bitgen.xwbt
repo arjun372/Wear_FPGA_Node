@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\VKondagunturi\Documents\Varun\FPGA_Boards\Nexys3\Nexys3_ISE_GPIO_UART\Nexys3_ISE_GPIO_UART\GPIO_demo.ncd
+OUTFILE=C:\Users\VKondagunturi\Documents\Varun\FPGA_Boards\Nexys3\Nexys3_ISE_GPIO_UART\Nexys3_ISE_GPIO_UART\GPIO_demo.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=C:\Users\VKondagunturi\Documents\Varun\FPGA_Boards\Nexys3\Nexys3_ISE_GPIO_UART\Nexys3_ISE_GPIO_UART
+LICENSE=ISE
+USER_INFO=210219796_175670721_210548921_522
